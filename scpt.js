@@ -12,12 +12,13 @@ const createTableDoc = (contextData, newRowTable) => {
 }
 
 submitBtn.addEventListener('click', () => {
-  const dataArr = [genderInput.value, nameInput.value, usernameInput.value]
+  const dataArr = [genderInput, nameInput, usernameInput]
   let badgeNum = parseInt(badge.innerHTML)
 
   const newRowTable = document.createElement('tr');
   for(let i of dataArr) {
-    createTableDoc(i, newRowTable)
+    createTableDoc(i.value, newRowTable)
+    i.value = ''
   }
 
   tableBody.appendChild(newRowTable)
